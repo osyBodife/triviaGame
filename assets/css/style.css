@@ -8,19 +8,19 @@ margin-top: 0px;
 
 .container{
     width: 80%;
-    background-color:lightgrey;
+    background-color:#ffffff;
     margin: auto;
 
 }
 
 #firstRow{
-    background-color:yellow; 
+    background-color:lightgrey;
    
 
 }
 
 #left, #right{
-    background-color:yellow; 
+    background-color:lightgrey;
 }
 #p1h2{
     text-align: center;

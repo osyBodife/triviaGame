@@ -11,13 +11,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
-            container
+            &nbsp;
             <div class="row" id="firstRow">
                 &nbsp;
                
@@ -31,6 +32,7 @@
                    </div>
                    <div class="col-md-8">
                         <p id="p1"> <h2>Trivia Games</h2></p>
+                        <div id="timer" ></div>
                         <form action="#" method="post" class="trivia" id="triviaForm">
                                 <label>1. Who is the first African-American Preisdent Of the US?</label>
                                 <br>
@@ -42,11 +44,27 @@
                         
                                 <br>
                                 <br>
+                                <label>2. Which is the fisrt country to land in the Moon?</label>
+                                <br>
+                                
+                                <input type="radio" name="country" value="Russia"  >Russia
+                                <input type="radio" name="country" value="China" >China
+                                <input type="radio" name="country" value="United States">United States
+                                <input type="radio" name="country" value="United Kingdon" >United Kingdom
+                        
                         
                         
                                 
-                                <p><button type="button" name="getVal" onclick="getFormValue();hideQuestions()">Done</button></p>
+         <p><button type="button" name="getVal" onclick="getFormValue(); hideQuestions();getCountryValue()">Done</button></p>
                                 </form>
+
+                                <br>
+
+                                <br>
+<p id="qtn1Ans"></p>
+<p id="incorrect"></p>
+<p id="unAnswered"></p>
+
                     </div>
 
                     <div class="col-md-2" id="right">
@@ -66,19 +84,8 @@
         </div>
 
 
+        <script src="assets/javascript/app.js"> </script>  
 
-
         
-        <script >
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </script>
     </body>
 </html>
