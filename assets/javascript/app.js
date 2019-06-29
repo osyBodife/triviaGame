@@ -8,9 +8,11 @@ window.onload = function() {
     function stopTimer(){
       if (sec == 1) {
       clearInterval(timeID);
-     var text="<button type='button' ><a href=obj.html> Time Up</a> </button>"
+     var text="<button type='button' ><a href=index.html> Time Up</a> </button>"
       document.getElementById("timer").innerHTML = text; 
       //"Your Time has EXPIRED";
+      $("#triviaForm").hide();
+
     }
     };
    
