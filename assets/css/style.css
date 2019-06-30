@@ -50,6 +50,7 @@ height: 300px;
 #start{
     font-size: 50px;
     text-align: center;
+    text-decoration: none;
 }
 
 #result{
@@ -58,4 +59,20 @@ height: 300px;
 label{
     color:red;
     font-size: 20px;
+
+}
+
+#textPage{
+    color:red;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+
+#textInstr{
+    
+    font-size: 20px;
+    text-align: center;
+    
 }
