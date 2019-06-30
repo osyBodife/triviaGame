@@ -13,7 +13,7 @@ window.onload = function() {
      var text="<button type='button' ><a href=index.html> Time Up</a> </button>"
       document.getElementById("timer").innerHTML = text; 
       //"Your Time has EXPIRED";
-      $("#triviaForm").hide();
+      $("#questions").hide();
 
     }
     };
@@ -45,6 +45,7 @@ window.onload = function() {
 
  
     $("#btnSubmit").click(function(){
+        //check if any radio button is selected
    var result=$('input[type="radio"]:checked');
    if(result.length>0){ 
     result.each(function () {
@@ -77,6 +78,52 @@ window.onload = function() {
             }
 
             });
+//end for question1
+
+$("#btnSubmit").click(function(){
+    //check if any radio button is selected
+var result=$('input[type="radio"]:checked');
+if(result.length>0){ 
+result.each(function () {
+    resultString = $(this).val();
+    if(resultString=="Brian Porter Kemp"){
+        //alert ("Correct Ans");
+ correctAnswers++;
+ text ="Correct Answers : " + correctAnswers;
+ document.getElementById("qtn1Ans").innerHTML =text;
+    }else{
+        //alert ("wrong answer");
+    wrongAnswers=wrongAnswers+1;
+    text ="Wrong Answers : " + wrongAnswers;
+     document.getElementById("unAnswered").innerHTML =text;
+
+
+    }
+
+});// end for each fun
+//$('#result').html(resultString);  
+
+        }else{
+            //no button was checked
+            //alert("error");
+            unAnswered ++;
+            text ="Unanswered : " + unAnswered;
+             document.getElementById("incorrect").innerHTML =text;
+
+
+        }
+
+        });
+
+
+
+
+
+
+
+
+
+
 
 
 $("#btnSubmit").click(function(){
