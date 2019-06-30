@@ -1,5 +1,7 @@
 
 window.onload = function() {
+    //var osy= $("<div>").text("SomeText");
+    //$(".container").prepend(osy);
     //var hour = 2;
     var hour = 0;
     var sec = 30;
@@ -16,6 +18,7 @@ window.onload = function() {
     }
     };
    
+
     var timeID=setInterval(function() {
       document.getElementById("timer").innerHTML = "Time Remaining : " + hour + " : " + sec;
       sec--;
@@ -28,90 +31,58 @@ window.onload = function() {
     }, 1000);
   }
 
+  var correctAnswers=0;
+  var wrongAnswers=0;
+  var unAnswered=0;
+  var text;
+  var president=[];
+  var country=[];
+  
+  var x;
 
 
 
 
-
-var correctAnswers=0;
-var wrongAnswers=0;
-var unAnswered=0;
-var text;
-var president=[];
-var country=[];
-
-var x;
-
-function getFormValue(){  
- var president = document.getElementsByName("president");
- console.log(president);
-
-  for (i = 0; i < president.length; i++){
-   currentPresident = president[i];
-   //console.log(president[i]);
-
-  if (currentPresident.checked){
-   var selectedPresident = currentPresident.value;
-   } 
-    // end if
-  } // end for
-
-  //put result in html element with id qtn1Ans
- // document.getElementById("qtn1Ans").innerHTML =selectedPresident;
  
- if(selectedPresident=="Barack Obama"){
+    $("#btnSubmit").click(function(){
+   var result=$('input[type="radio"]:checked');
+   if(result.length>0){ 
+    result.each(function () {
+        resultString = $(this).val();
+        if(resultString=="Barack Obama"){
+            //alert ("Correct Ans");
      correctAnswers++;
      text ="Correct Answers : " + correctAnswers;
      document.getElementById("qtn1Ans").innerHTML =text;
- }else{
-     wrongAnswers=wrongAnswers+1;
-     text ="Wrong Answers : " + wrongAnswers;
-     document.getElementById("incorrect").innerHTML =text;
- }
-//}else{
-
-  //alert("error")
-//}
-  } // end fu
-
-  function getCountryValue(){  
-    var country = document.getElementsByName("country");
-    
-   
-     for (i = 0; i < country.length; i++){
-      currentCountry = country[i];
-      //console.log(president[i]);
-   
-     if (currentCountry.checked){
-        var selectedCountry = currentCountry.value;
-      } 
-       // end if
-     } // end for
-   
-     //put result in html element with id qtn1Ans
-    // document.getElementById("qtn1Ans").innerHTML =selectedPresident;
-    
-    if(selectedCountry=="United States"){
-        correctAnswers++;
-        text ="Correct Answers : " + correctAnswers;
-        document.getElementById("qtn1Ans").innerHTML =text;
-    }else{
+        }else{
+            //alert ("wrong answer");
         wrongAnswers=wrongAnswers+1;
         text ="Wrong Answers : " + wrongAnswers;
-        document.getElementById("incorrect").innerHTML =text;
-    }
-   //}else{
-   
-     //alert("error")
-   //}
-     } // end fu
-   
+         document.getElementById("unAnswered").innerHTML =text;
 
-   
 
-  function hideQuestions(){
-    $("#triviaForm").click(function(){
-        $("#triviaForm").hide();
+        }
+
+    });// end for each fun
+    //$('#result').html(resultString);  
+
+            }else{
+                //no button was checked
+                //alert("error");
+                unAnswered ++;
+                text ="Unanswered : " + unAnswered;
+                 document.getElementById("incorrect").innerHTML =text;
+
+
+            }
+
+            });
+
+
+$("#btnSubmit").click(function(){
+  //function hideQuestions(){
+   
+        $("#questions").hide();
   });
-};
+
 

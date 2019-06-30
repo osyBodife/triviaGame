@@ -30,9 +30,14 @@ margin-top: 0px;
 
 }
 
-#left, #right{
+#left,#right {
     background-color:lightgrey;
 }
+
+#lastRow {
+    background-color:lightgrey;
+}
+
 #p1h2{
     text-align: center;
     font-size: 50px;
@@ -45,4 +50,8 @@ height: 300px;
 #start{
     font-size: 50px;
     text-align: center;
+}
+
+#result{
+    background-color: white;
 }
