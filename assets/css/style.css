@@ -55,3 +55,7 @@ height: 300px;
 #result{
     background-color: white;
 }
+label{
+    color:red;
+    font-size: 20px;
+}

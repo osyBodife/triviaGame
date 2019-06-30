@@ -40,9 +40,18 @@ window.onload = function() {
   
   var x;
 
+  $("#btnSubmit").click(function(){
+    
+    getSelectedCheckBoxQtn1('president');
+    getSelectedCheckBoxQtn2('governor');
+    getSelectedCheckBoxQtn3('country');
+    getSelectedCheckBoxQtn4('population');
+    //hideQtns();
+
+  });
 
 
-
+/*
  
     $("#btnSubmit").click(function(){
         //check if any radio button is selected
@@ -62,7 +71,7 @@ window.onload = function() {
          document.getElementById("unAnswered").innerHTML =text;
 
 
-        }
+        }//end for if statement
 
     });// end for each fun
     //$('#result').html(resultString);  
@@ -79,7 +88,7 @@ window.onload = function() {
 
             });
 //end for question1
-
+/*
 $("#btnSubmit").click(function(){
     //check if any radio button is selected
 var result=$('input[type="radio"]:checked');
@@ -115,16 +124,151 @@ result.each(function () {
 
         });
 
+       */ 
+//question 1 function
+          
+        var getSelectedCheckBoxQtn1 = function (president) {
+            var result = $('input[name="' + president + '"]:checked');
+            if (result.length > 0) {
+                //var resultString = result.length ;
+                result.each(function () {
+                    resultString = $(this).val();
+                    if(resultString=="Barack Obama"){
+                        //alert ("Correct Ans");
+                 correctAnswers++;
+                 text ="Correct Answers : " + correctAnswers;
+                 document.getElementById("qtn1Ans").innerHTML =text;
+                    }else{
+                        //alert ("wrong answer");
+                    wrongAnswers=wrongAnswers+1;
+                    text ="Wrong Answers : " + wrongAnswers;
+                     document.getElementById("unAnswered").innerHTML =text;
+            
+            
+                    }//end for if statement
+
+                });
+                //$('#divResult').html(resultString);
+            }
+            else {
+           //no button was checked
+            //alert("error");
+            unAnswered ++;
+            text ="Unanswered : " + unAnswered;
+             document.getElementById("incorrect").innerHTML =text;
+            }
+
+        };
+
+        //question 2 function
+        var getSelectedCheckBoxQtn2 = function (governor) {
+            var result = $('input[name="' + governor + '"]:checked');
+            if (result.length > 0) {
+                //var resultString = result.length + " checkboxe(s) checked<br/>";
+                result.each(function () {
+                    resultString = $(this).val();
+                    if(resultString=="Brian Kemp"){
+                        //alert ("Correct Ans");
+                 correctAnswers++;
+                 text ="Correct Answers : " + correctAnswers;
+                 document.getElementById("qtn1Ans").innerHTML =text;
+                    }else{
+                        //alert ("wrong answer");
+                    wrongAnswers=wrongAnswers+1;
+                    text ="Wrong Answers : " + wrongAnswers;
+                     document.getElementById("unAnswered").innerHTML =text;
+            
+            
+                    }//end for if statement
+
+                });
+                //$('#divResult').html(resultString);
+            }
+            else {
+           //no button was checked
+            //alert("error");
+            unAnswered ++;
+            text ="Unanswered : " + unAnswered;
+             document.getElementById("incorrect").innerHTML =text;
+            }
+
+        };
+
+
+//question 3 function
+var getSelectedCheckBoxQtn3 = function (country) {
+    var result = $('input[name="' + country + '"]:checked');
+    if (result.length > 0) {
+        //var resultString = result.length + " checkboxe(s) checked<br/>";
+        result.each(function () {
+            resultString = $(this).val();
+            if(resultString=="United States"){
+                //alert ("Correct Ans");
+         correctAnswers++;
+         text ="Correct Answers : " + correctAnswers;
+         document.getElementById("qtn1Ans").innerHTML =text;
+            }else{
+                //alert ("wrong answer");
+            wrongAnswers=wrongAnswers+1;
+            text ="Wrong Answers : " + wrongAnswers;
+             document.getElementById("unAnswered").innerHTML =text;
+    
+    
+            }//end for if statement
+
+        });
+        //$('#divResult').html(resultString);
+    }
+    else {
+   //no button was checked
+    //alert("error");
+    unAnswered ++;
+    text ="Unanswered : " + unAnswered;
+     document.getElementById("incorrect").innerHTML =text;
+    }
+
+};
+
+
+
+//question 4 function
+var getSelectedCheckBoxQtn4 = function (population) {
+    var result = $('input[name="' + population + '"]:checked');
+    if (result.length > 0) {
+        //var resultString = result.length + " checkboxe(s) checked<br/>";
+        result.each(function () {
+            resultString = $(this).val();
+            if(resultString=="China"){
+                //alert ("Correct Ans");
+         correctAnswers++;
+         text ="Correct Answers : " + correctAnswers;
+         document.getElementById("qtn1Ans").innerHTML =text;
+            }else{
+                //alert ("wrong answer");
+            wrongAnswers=wrongAnswers+1;
+            text ="Wrong Answers : " + wrongAnswers;
+             document.getElementById("unAnswered").innerHTML =text;
+    
+    
+            }//end for if statement
+
+        });
+        //$('#divResult').html(resultString);
+    }
+    else {
+   //no button was checked
+    //alert("error");
+    unAnswered ++;
+    text ="Unanswered : " + unAnswered;
+     document.getElementById("incorrect").innerHTML =text;
+    }
+
+};
 
 
 
 
-
-
-
-
-
-
+/*
 
 $("#btnSubmit").click(function(){
   //function hideQuestions(){
@@ -132,4 +276,10 @@ $("#btnSubmit").click(function(){
         $("#questions").hide();
   });
 
+*/
+  
+$("#btnSubmit").click(function(){   
+     
+          $("#questions").hide();
+    });
 
