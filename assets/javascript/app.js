@@ -41,7 +41,7 @@ window.onload = function() {
   var x;
 
   $("#btnSubmit").click(function(){
-    
+    //call the 4 functions
     getSelectedCheckBoxQtn1('president');
     getSelectedCheckBoxQtn2('governor');
     getSelectedCheckBoxQtn3('country');
@@ -126,13 +126,19 @@ result.each(function () {
 
        */ 
 //question 1 function
-          
+          //create a function that takes parameter==name attribute of the options in qtn 1
+          //in this instance name="president"; 
         var getSelectedCheckBoxQtn1 = function (president) {
             var result = $('input[name="' + president + '"]:checked');
+            //check if at least one radio button is selected
             if (result.length > 0) {
                 //var resultString = result.length ;
+                //use the each(function() to iterate thru the values
                 result.each(function () {
+                    //get the value of current selection
                     resultString = $(this).val();
+                    //if value matches the cuurent answer
+                    // increment current answers by 1
                     if(resultString=="Barack Obama"){
                         //alert ("Correct Ans");
                  correctAnswers++;
